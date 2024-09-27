@@ -140,7 +140,7 @@ private extension CardView {
             if abs(value.translation.width) > 100 ||
                 (value.translation.height < -120 && abs(value.translation.width) < 100) {
                 viewModel.removeCard(card)
-                viewModel.state = .none
+                viewModel.state = viewModel.cards.count == 0 ? .reloadData : .none
             }
         }
     }
@@ -190,7 +190,7 @@ private extension CardView {
             viewModel.removeCard(card)
             let userInfo: [String: Any] = ["cardId": viewModel.cards.last?.id ?? ""]
             NotificationCenter.default.post(name: .finishSelection, object: nil, userInfo: userInfo)
-            viewModel.state = .none
+            viewModel.state = viewModel.cards.count == 0 ? .reloadData : .none
         }
     }
 }

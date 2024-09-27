@@ -81,6 +81,9 @@ struct ButtonActionView: View {
             }
         })
         .frame(width: size.width, height: size.height)
+        .disabled(state == .reloadData)
+        .opacity(state == .reloadData ? 0.4 : 1)
+        .animation(.easeOut(duration: 1), value: state)
     }
 }
 

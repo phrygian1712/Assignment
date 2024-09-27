@@ -26,8 +26,9 @@ class ProfileViewModel: ObservableObject {
         Task { await fetchData() }
     }
     
+    #warning("need loading page here to limit the number of cards view, implement later")
     func fetchData() async {
-        state = .fetching
+        state = .reloadData
         do {
             self.cards = try await service.fetchCardModels()
             state = .none
@@ -42,17 +43,4 @@ class ProfileViewModel: ObservableObject {
         cards.remove(at: index)
     }
     
-    
-    func reloadData() async {
-        print("Refresh data")
-        state = .fetching
-        cards.removeAll()
-        do {
-            self.cards = try await service.fetchCardModels()
-            state = .none
-        } catch {
-            state = .none
-            print("DEBUG: failed with error: \(error)")
-        }
-    }
 }

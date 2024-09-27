@@ -47,10 +47,9 @@ struct CardStackView: View {
                 }
             }
         }
-        .padding(.bottom, 1)
         .onChange(of: viewModel.cards) { oldValue, newValue in
             if newValue.isEmpty {
-                Task { await viewModel.reloadData() }
+                Task { await viewModel.fetchData() }
             }
         }
     }
