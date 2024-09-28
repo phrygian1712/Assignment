@@ -1,3 +1,4 @@
+import UIKit
 
 func threeHandWidthsBag(v1: Int, w1: Int, v2: Int, w2: Int,
                maxW: Int) -> Int {
@@ -26,5 +27,3 @@ threeHandWidthsBag(v1: 3,  w1: 5, v2: 3,  w2: 8, maxW: 10)
 threeHandWidthsBag(v1: 3,  w1: 6, v2: 3,  w2: 6, maxW: 10)
 threeHandWidthsBag(v1: 3,  w1: 6, v2: 4,  w2: 6, maxW: 10)
  
-
-
