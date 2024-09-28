@@ -114,7 +114,7 @@ struct CardView: View {
 private extension CardView {
     
     private func onDragEnded(_ value: _ChangedGesture<DragGesture>.Value) {
-        withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 130, damping: 8, initialVelocity: 1)) {
+        withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 140, damping: 8, initialVelocity: 1)) {
             if viewModel.state == .fetching { return }
             
             let height = value.translation.height
@@ -134,7 +134,6 @@ private extension CardView {
             default:
                 xOffset = 0; yOffset = 0;
             }
-            
             viewModel.dragCurrentState = .none
         } completion: {
             if abs(value.translation.width) > 100 ||
@@ -167,9 +166,9 @@ private extension CardView {
     }
     
     private func finishSelection() {
-        viewModel.state = .fetching
         var userInfo: [String: Any] = [:]
         if viewModel.cards.count > 1 {
+            viewModel.state = .fetching
             userInfo = ["cardId": viewModel.cards[viewModel.cards.count - 2].id]
             NotificationCenter.default.post(name: .finishSelection, object: nil, userInfo: userInfo)
         }
