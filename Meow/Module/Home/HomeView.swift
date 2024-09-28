@@ -19,7 +19,7 @@ struct HomeView: View {
             ZStack(alignment: .bottom) {
                 CardStackView(viewModel: viewModel)
                     .padding(.bottom, 45)
-                BottomActionView(dragCurrentAction: viewModel.dragCurrentState, currentCardId: viewModel.cards.last?.id ?? "", viewModel: viewModel)
+                BottomActionView(dragCurrentAction: viewModel.dragCurrentState, currentCardId: viewModel.cards.last?.id ?? "", countCards: viewModel.cards.count, state: viewModel.state)
                     .padding(.bottom, 8)
             }
         }

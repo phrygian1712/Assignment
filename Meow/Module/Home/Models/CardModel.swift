@@ -16,18 +16,11 @@ struct CardModel: Identifiable, Hashable {
     
     static var mockData: [CardModel] {
         [
-            CardModel(name: "Penny", images:
-                        ["p5", "p0"],
-                      age: 24,
-                      bio: "J'aime la vie et le vin J'aime la vie et le vin J'aime la vie et le vin J'aime la vie et le vin 🍷"),
             CardModel(name:
                         "Abigail",
                       images: ["p2", "p3", "p4"],
                       age: 26,
-                      bio: "hi, let's be friends"),
-            CardModel(name: "Zoé",
-                      images: ["p3", "p5", "p3", "p2"],
-                      age: 20, bio: "Law grad"),
+                      bio: "hi, let's be friends 🍷"),
             CardModel(name: "Tilly",
                       images: ["p4", "p1"],
                       age: 21,
@@ -37,7 +30,7 @@ struct CardModel: Identifiable, Hashable {
                       age: 23,
                       bio: "Like exercising, going out, pub, working 🍻"),
             CardModel(name: "Tatiana",
-                      images: ["p0", "p3", "p2"],
+                      images: ["p0", "p3"],
                       age: 21,
                       bio: "Insta - roooox 💋"),
         ]

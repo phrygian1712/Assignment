@@ -15,7 +15,11 @@ enum HomeViewState {
 
 @MainActor
 class ProfileViewModel: ObservableObject {
-    @Published var state: HomeViewState = .none
+    @Published var state: HomeViewState = .none {
+        didSet {
+//            print("State change: \(state)")
+        }
+    }
     @Published var cards = [CardModel]()
     @Published var dragCurrentState: SwipeAction = .none
     
@@ -26,8 +30,9 @@ class ProfileViewModel: ObservableObject {
         Task { await fetchData() }
     }
     
-    #warning("need loading page here to limit the number of cards view, implement later")
+    #warning("need to limit the number of cards view to improve perfomance, implement later...")
     func fetchData() async {
+        print("fetch data...")
         state = .reloadData
         do {
             self.cards = try await service.fetchCardModels()
