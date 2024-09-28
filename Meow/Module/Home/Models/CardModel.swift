@@ -17,20 +17,25 @@ struct CardModel: Identifiable, Hashable {
     static var mockData: [CardModel] {
         [
             CardModel(name:
-                        "Abigail",
-                      images: ["p2", "p3", "p4"],
+                        "Nicorobin",
+                      images: ["p1", "p7", "p0"],
+                      age: 28,
+                      bio: "New here! 🍷"),
+            CardModel(name:
+                        "Nami",
+                      images: ["p7", "p2", "p4"],
                       age: 26,
                       bio: "hi, let's be friends 🍷"),
             CardModel(name: "Tilly",
-                      images: ["p4", "p1"],
+                      images: ["p4", "p7", "p1"],
                       age: 21,
                       bio: "Follow me on IG"),
             CardModel(name: "Betty",
-                      images: ["p1", "p5", "p4", "p0", "p2"],
+                      images: ["p3", "p4", "p0", "p2", "p7"],
                       age: 23,
                       bio: "Like exercising, going out, pub, working 🍻"),
             CardModel(name: "Tatiana",
-                      images: ["p0", "p3"],
+                      images: ["p0", "p2"],
                       age: 21,
                       bio: "Insta - roooox 💋"),
         ]
